@@ -1,4 +1,4 @@
-package com.curseproject.logpass.ussers;
+package com.courseproject.logpass.ussers;
 
 import java.util.Objects;
 
@@ -16,7 +16,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        com.courseproject.logpass.ussers.User user = (com.courseproject.logpass.ussers.User) o;
         return Objects.equals(login, user.login) && Objects.equals(password, user.password);
     }
 
