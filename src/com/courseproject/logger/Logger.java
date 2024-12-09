@@ -1,6 +1,5 @@
 package com.courseproject.logger;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -33,5 +32,4 @@ public class Logger {
             throw new RuntimeException(e);
         }
     }
-
 }
