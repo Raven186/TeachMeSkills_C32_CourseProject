@@ -1,7 +1,8 @@
 package com.courseproject;
 
+import com.courseproject.documentProccessing.SorterDocuments;
 import com.courseproject.exception.fileException.NullFolderException;
-import com.courseproject.documentprocessing.SorterDocuments;
+
 
 import java.io.IOException;
 import java.util.Scanner;
