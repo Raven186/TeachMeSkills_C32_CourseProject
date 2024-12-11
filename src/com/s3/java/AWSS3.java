@@ -1,22 +1,41 @@
 package com.s3.java;
 
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.AwsCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Properties;
 
 public class AWSS3 {
 
     public static void main(String[] args) {
-        String accessKey = "AKIAWQUOZ3GRVBUIJUIZ";
-        String secretKey = "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";
+
         String bucketName = "reports-tms";
         String regionName = "eu-north-1";
+
+        String properties = "config.properties";
+
+        Properties props = new Properties();
+        try (FileInputStream fis = new FileInputStream(properties)) {
+            props.load(fis);
+        } catch (IOException e) {
+            System.err.println("Error " + e.getMessage());
+            return;
+        }
+
+        String accessKey = props.getProperty("accessKey");
+        String secretKey = props.getProperty("secretKey");
+
+        if (accessKey == null || secretKey == null) {
+            System.err.println("No keys");
+            return;
+        }
 
         File baseFolder = new File("E:\\Project\\TeachMeSkills_Final_Assignment\\src\\com\\static");
 
@@ -25,7 +44,7 @@ public class AWSS3 {
             return;
         }
 
-        AwsCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
+        AwsBasicCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
 
         S3Client s3Client = S3Client
                 .builder()
