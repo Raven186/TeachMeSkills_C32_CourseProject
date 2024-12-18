@@ -24,9 +24,9 @@ import java.util.Scanner;
          */
         public static boolean launchTFA() {
             // Data for 2FA
-            String secretKey = "QDWSM3OYBPGTEVSPB5FKVDM3CSNCWHVK";
-            String email = "ilya_kate@gmail.com";
-            String companyName = "Kate's and Ilya's corp.";
+            String secretKey = "";
+            String email = "";
+            String companyName = "";
             // Generate URL for Google Authenticator
             String barCodeUrl = twoFAHelpers.getGoogleAuthenticatorBarCode(secretKey, email, companyName);
 

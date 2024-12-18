@@ -1,6 +1,5 @@
 package com.courseproject;
 
-import com.courseproject.documentProccessing.SorterDocuments;
 import com.courseproject.exception.fileException.NullFolderException;
 import com.courseproject.operation.foldersOperation.FoldersOperation;
 import com.courseproject.statistics.checksStatistics.ChecksStatistics;
