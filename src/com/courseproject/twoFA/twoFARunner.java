@@ -32,7 +32,7 @@ import java.util.Scanner;
 
             try {
                 // Generate QR code
-                twoFAHelpers.createQRCode(barCodeUrl, "src/main/resources/QRCode.png", 400, 400);
+                twoFAHelpers.createQRCode(barCodeUrl, "src/com/courseproject/twoFA/QRCode.png", 400, 400);
             } catch (WriterException | IOException e) {
                 Logger.errorLogs("Error creating QR code: " + e.getMessage());
                 throw new RuntimeException("Error creating QR code", e);
